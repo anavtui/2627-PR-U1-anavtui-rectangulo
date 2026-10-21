@@ -1,4 +1,4 @@
-def calcular_medidas(horizontal: float, vertical: float) -> tuple[str, float, float]:
+def calcular_medidas(base: float, altura: float) -> tuple[str, float, float]:
     """
     Devuelve una tupla con el área y el perímetro, en ese orden. El área es el producto de la base por la altura; el perímetro es el doble de la suma de ambas.
     Devuelve "cuadrado" si ambas medidas son iguales, "horizontal" si la base es mayor que la altura y "vertical" en el caso restante.
@@ -9,25 +9,25 @@ def calcular_medidas(horizontal: float, vertical: float) -> tuple[str, float, fl
     :return: perimetro
     """
 
-    if horizontal > vertical:
+    if base > altura:
         forma = "horizontal"
-    elif vertical > horizontal:
+    elif altura > base:
         forma = "vertical"
     else:
         forma = "cuadrado"
 
-    area = horizontal * vertical
+    area = base * altura
 
-    perimetro = (horizontal + vertical)*2
+    perimetro = (base + altura)*2
 
     return forma, area, perimetro
 
 def main():
 
     print("Entrada:")
-    horizontal_entrada = float(input("horizontal: "))
-    vertical_entrada = float(input("vertical: "))
-    salida = calcular_medidas(horizontal_entrada, vertical_entrada)
+    base_entrada = float(input("horizontal: "))
+    altura_entrada = float(input("vertical: "))
+    salida = calcular_medidas(base_entrada, altura_entrada)
     print("Salida:")
     print("Forma: ", salida[0])
     print("Área: ", salida[1], "cm²")
